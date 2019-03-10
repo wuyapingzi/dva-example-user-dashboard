@@ -22,6 +22,7 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
   }
 
   function editHandler(id, values) {
+    console.log('edit.handler:', id, values);
     dispatch({
       type: 'users/patch',
       payload: { id, values },
@@ -57,7 +58,7 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
       key: 'operation',
       render: (text, record) => (
         <span className={styles.operation}>
-          <UserModal record={record} onOk={editHandler.bind(null, record.id)}>
+          <UserModal record={record} text={text} onOk={editHandler.bind(null, record.id)}>
             <a>Edit</a>
           </UserModal>
           <Popconfirm title="Confirm to delete?" onConfirm={deleteHandler.bind(null, record.id)}>

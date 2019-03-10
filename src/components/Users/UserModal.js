@@ -43,7 +43,6 @@ class UserEditModal extends Component {
       labelCol: { span: 6 },
       wrapperCol: { span: 14 },
     };
-
     return (
       <span>
         <span onClick={this.showModelHandler}>

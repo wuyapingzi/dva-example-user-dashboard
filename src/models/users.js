@@ -9,6 +9,7 @@ export default {
   },
   reducers: {
     save(state, { payload: { data: list, total, page } }) {
+      console.log('xxxxxxxxxxx', list);
       return { ...state, list, total, page };
     },
   },
